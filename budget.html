@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Test ta personnalité!</title>
+        <link rel="stylesheet" type="text/css" href="style.css"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+        </head>
+
+    <body>
+        <section id="calcul">
+            <div id="saisie">
+                <form>
+                    <fieldset>
+                    <legend>Saisie des informations</legend>
+                        <label for="nameA">Individu 1: </label>
+                        <input id="nameA" type="text" name="nameA" value="" placeholder="Nom individu 1">
+
+                        <label for="nameB">Individu 2:</label>
+                        <input id="nameB" type="text" name="nameB" value="" placeholder="Nom individu 2">
+
+                        <label id="lRevenu1" for="revenu1"></label>
+                        <input id="revenu1" type="text" name="revenu1" value="" placeholder="Revenu individu 1">
+
+                        <label id="lRevenu2" for="revenu2"></label>
+                        <input id="revenu2" type="text" name="revenu2" value="" placeholder="Revenu individu 2">
+
+                        <label for="aides">Aides</label>
+                        <input id="aides" type="text" name="aides" value="">
+
+                        <label for="dettes">Divers</label>
+                        <input id="dettes" type="text" name="dettes" value="">
+                    </fieldset>
+                </form>
+                <form>
+                    <fieldset>
+                    <legend>Informations déposées</legend>
+                        <div id="Revenu1"></div><div id="span1"></div>
+                        <div id="Revenu2"></div><div id="span2"></div>
+                        <div id="Aides"></div>
+                        <div id="Dettes"></div>
+                    </fieldset>
+                </form>
+            </div>
+            <div id="Frais">
+                <form>
+                    <fieldset>
+                    <legend>Informations comptabilisées</legend>
+                        <p id="frais"></p>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+
+        <section id="resultats">
+            <form>
+                <fieldset id="individu1">
+                <legend id="legend1"></legend>
+                    <div id="p1">
+
+                    </div>
+                </fieldset>
+
+                <fieldset id="individu2">
+                <legend id="legend2"></legend>
+                    <div id="p2">
+
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+
+    <script src="script.js"></script>
+    </body>
+
+</html>

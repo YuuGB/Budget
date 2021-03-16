@@ -1,0 +1,57 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+#saisie{
+    text-align: center;
+    align-items: center;
+}
+
+fieldset{
+    background: rgba(255, 255, 255, 0.5);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+legend{
+    font-size: 40px;
+    font-family: 'Redressed', cursive;
+}
+
+fieldset input{
+    margin: 20px;
+}
+
+#frais{
+    background: rgba(255, 255, 255, 0.5);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+#resultats{
+    background: rgba(255, 255, 255, 0.5);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+#resultats form{
+    display: flex;
+    align-items: flex-end;
+}
+
+#resultats form fieldset{
+    width: 30vmax;
+}
+
+#individu1{
+    margin-left: 10vmax;
+    margin-right: 10vmax;
+}
+
+

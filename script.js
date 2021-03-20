@@ -4,6 +4,11 @@ let Revenu1 = document.getElementById("Revenu1");
 let montantRevenu1 ;
 let span1 = document.getElementById("span1");
 let span2 = document.getElementById("span2");
+let montantAides = 0;
+let montantDettes = 0;
+let montantFrais = 0 - Number(montantAides) +Number(montantDettes);
+console.log(montantFrais);
+
 revenu1.addEventListener("input", function(event){
 
     span1.innerHTML = event.target.value;
@@ -25,11 +30,11 @@ revenu2.addEventListener("input", function(event){
 
 let aides = document.getElementById("aides");
 let Aides = document.getElementById("Aides");
-let montantAides = 0;
-aides.addEventListener("input", function(event){
+aides.addEventListener("change", function(event){
 
     Aides.innerHTML ="Montant des aides:" + " " + event.target.value;
-    montantAides = parseInt(event.target.value);
+    montantAides = Number(event.target.value);
+    montantFrais -= Number(montantAides);
     Calcul();
     
 
@@ -37,24 +42,22 @@ aides.addEventListener("input", function(event){
 
 let dettes = document.getElementById("dettes");
 let Dettes = document.getElementById("Dettes");
-let montantDettes = 0;
-dettes.addEventListener("input", function(event){
+dettes.addEventListener("change", function(event){
 
     Dettes.innerHTML ="Montant divers:" + " " + event.target.value;
-    montantDettes = parseInt(event.target.value);
+    montantDettes = Number(event.target.value);
+    montantFrais += Number(montantDettes);
     Calcul();
     
 
 })
 
-let fraisTotaux = document.getElementById("frais");
+let fraisTotaux = document.getElementById("valeurFinale");
 
 
 
 function Calcul(){
     revenuTotaux = parseInt(montantRevenu1 + montantRevenu2) ;
-    let montantFrais = 1600 - montantAides + montantDettes;
-    fraisTotaux.innerHTML = "Frais totaux:" + " " +montantFrais + " " + "Revenus totaux:" + " " + revenuTotaux;
     let taux1 = Math.round((montantRevenu1*100)/revenuTotaux);
     let taux2 = Math.round((montantRevenu2*100)/revenuTotaux);
 
@@ -112,3 +115,53 @@ nameB.addEventListener("input" , function(){
     
 })
 
+class frais {
+    constructor (titre , valeur){
+
+    this.titre = titre;
+    this.valeur = valeur;
+    }
+}
+
+let FraisArray = [
+    new frais("Titre" , "Montant"),
+]
+
+let submit = document.getElementById("submit");
+let titre = document.getElementById("titre");
+let valeurFrais = document.getElementById("valeur");
+let divTitre = document.getElementById("divTitre");
+let divValeur = document.getElementById("divValeur");
+
+let fraisEngages = 0;
+let fraisRecherche = FraisArray[fraisEngages];
+
+
+    submit.addEventListener("click", function(){
+
+        let titreInscrit = titre.value;
+        let valeurInscrite = valeurFrais.value;
+
+        FraisArray.push(new frais (titreInscrit , valeurInscrite));
+        if (fraisEngages == 0){
+            
+            divTitre.innerHTML += fraisRecherche.titre + "<br>";
+            divValeur.innerHTML += fraisRecherche.valeur + "<br>";
+            fraisEngages++;
+            fraisRecherche = FraisArray[fraisEngages];
+            divTitre.innerHTML += fraisRecherche.titre + "<br>";
+            divValeur.innerHTML += fraisRecherche.valeur + "<br>";
+            montantFrais += Number(fraisRecherche.valeur);
+        } else {
+        fraisEngages ++;
+        fraisRecherche = FraisArray[fraisEngages];
+        divTitre.innerHTML += fraisRecherche.titre + "<br>";
+        divValeur.innerHTML += fraisRecherche.valeur + "<br>";
+        montantFrais += Number(fraisRecherche.valeur);
+        }
+        
+        fraisTotaux.innerHTML = "Frais totaux:" + " " +montantFrais + "<br>" + "Revenus totaux:" + " " + revenuTotaux;
+        Calcul();
+        
+        
+    })

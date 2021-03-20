@@ -27,11 +27,17 @@ fieldset input{
 
 #frais{
     background: rgba(255, 255, 255, 0.5);
-    margin: 20px;
+    margin: 0 auto;
     padding: 20px;
     text-align: center;
     align-items: center;
+    width: 20vh;
 }
+
+#frais #divTitre{
+    float: left;
+}
+
 
 #resultats{
     background: rgba(255, 255, 255, 0.5);

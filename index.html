@@ -45,12 +45,27 @@
                 </form>
             </div>
             <div id="Frais">
-                <form>
+                
                     <fieldset>
-                    <legend>Informations comptabilisées</legend>
-                        <p id="frais"></p>
+                    <legend>Informations comptabilisées</legend>    
+                        <div id="Frais">
+                            <form>
+                                <label>Indiquez vos frais</label><br>
+                                <label for="titre">Type:</label>
+                                <input type="text" name="titre" id="titre">
+                                <label for="valeur">Montant:</label>
+                                <input type="number" name="valeur" id="valeur">
+                            </form>
+                            <button id="submit">Valider</button>
+                        </div>
+                        <div id="frais">
+                            <div id="divTitre"></div>
+                            <div id="divValeur"></div>
+                            <div id="valeurFinale"></div>
+                        </div>
+
                     </fieldset>
-                </form>
+                
             </div>
         </section>
 
@@ -72,7 +87,7 @@
             </form>
         </section>
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
     </body>
 
 </html>

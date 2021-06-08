@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoclient": "^1.0.3",
+    "mongodb": "^3.6.9",
+    "nodemon": "^2.0.7",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "budget",
+  "description": "Petit site sans prétention créer afin de tester certaines fonction en javascript mais aussi GitHub.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YuuGB/Budget.git"
+  },
+  "author": "YuuGB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YuuGB/Budget/issues"
+  },
+  "homepage": "https://github.com/YuuGB/Budget#readme"
+}
